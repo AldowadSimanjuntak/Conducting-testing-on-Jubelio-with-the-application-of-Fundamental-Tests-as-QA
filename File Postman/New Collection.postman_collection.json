@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "07a6fded-08b2-4fd8-b3a3-4bbe9c65473c",
+		"name": "New Collection",
+		"description": "Test API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30166150"
+	},
+	"item": [
+		{
+			"name": "Tes login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"qa.rakamin.jubelio@gmail.com\",\r\n    \"password\": \"Jubelio123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://api.jubelio.com/login",
+				"description": "API Login"
+			},
+			"response": []
+		},
+		{
+			"name": "negative tes login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"qa.rakamin.jubelio@gmail.com\",\r\n    \"password\": \"rakamin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://api.jubelio.com/login",
+				"description": "API Login Negative test"
+			},
+			"response": []
+		},
+		{
+			"name": "Negative tes Get Internal Price",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.jubelio.com/inventory/internal-price-list/?page=1&pageSize=200",
+					"protocol": "https",
+					"host": [
+						"api",
+						"jubelio",
+						"com"
+					],
+					"path": [
+						"inventory",
+						"internal-price-list",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "200"
+						}
+					]
+				},
+				"description": "negative tes"
+			},
+			"response": []
+		},
+		{
+			"name": "Tes Get Internal Price",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlVTRVI6cWEucmFrYW1pbi5qdWJlbGlvQGdtYWlsLmNvbToxMTAuMTM3LjQwLjE0IiwiZXhwIjoxNjk2MTQxOTYyMTU5LCJpYXQiOjE2OTYwOTg3NjJ9.JemE-3IfF-NgB-SIOJXc-CmQ7e439_88nCLUs5guZ2w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.jubelio.com/inventory/internal-price-list/?page=1&pageSize=200",
+					"protocol": "https",
+					"host": [
+						"api",
+						"jubelio",
+						"com"
+					],
+					"path": [
+						"inventory",
+						"internal-price-list",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "200"
+						}
+					]
+				},
+				"description": "Tes Get Internal Price"
+			},
+			"response": []
+		},
+		{
+			"name": "Tes upload image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlVTRVI6cWEucmFrYW1pbi5qdWJlbGlvQGdtYWlsLmNvbToxMTAuMTM3LjQwLjE0IiwiZXhwIjoxNjk2MTQxOTYyMTU5LCJpYXQiOjE2OTYwOTg3NjJ9.JemE-3IfF-NgB-SIOJXc-CmQ7e439_88nCLUs5guZ2w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "name",
+							"value": "Nasi Goreng",
+							"type": "text"
+						},
+						{
+							"key": "uid",
+							"value": "1234512345",
+							"type": "text"
+						}
+					]
+				},
+				"url": "https://api.jubelio.com/inventory/upload-image",
+				"description": "tes upload image"
+			},
+			"response": []
+		},
+		{
+			"name": "Negative tes upload image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlVTRVI6cWEucmFrYW1pbi5qdWJlbGlvQGdtYWlsLmNvbToxMTAuMTM3LjQwLjE0IiwiZXhwIjoxNjk2MTQxOTYyMTU5LCJpYXQiOjE2OTYwOTg3NjJ9.JemE-3IfF-NgB-SIOJXc-CmQ7e439_88nCLUs5guZ2w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "https://api.jubelio.com/inventory/upload-image",
+				"description": "negative tes upload image"
+			},
+			"response": []
+		},
+		{
+			"name": "Tes delete inventory image",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlVTRVI6cWEucmFrYW1pbi5qdWJlbGlvQGdtYWlsLmNvbToxMTAuMTM3LjQwLjE0IiwiZXhwIjoxNjk2MTQxOTYyMTU5LCJpYXQiOjE2OTYwOTg3NjJ9.JemE-3IfF-NgB-SIOJXc-CmQ7e439_88nCLUs5guZ2w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"ids\": [1, 2, 3]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://api.jubelio.com/inventory/items/",
+				"description": "tes delete inventory items"
+			},
+			"response": []
+		},
+		{
+			"name": "Negative Tes delete inventory image",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlVTRVI6cWEucmFrYW1pbi5qdWJlbGlvQGdtYWlsLmNvbToxMTAuMTM3LjQwLjE0IiwiZXhwIjoxNjk2MTQxOTYyMTU5LCJpYXQiOjE2OTYwOTg3NjJ9.JemE-3IfF-NgB-SIOJXc-CmQ7e439_88nCLUs5guZ2w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://api.jubelio.com/inventory/items/",
+				"description": "negative Tes delete inventory image"
+			},
+			"response": []
+		}
+	]
+}
